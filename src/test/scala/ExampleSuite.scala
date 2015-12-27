@@ -7,7 +7,7 @@ class ExampleSuite extends FunSuite {
   }
  
   test("test 2 values are different and fail") {
-    assert(2 === 2)
+    assert(3 === 2)
   }
 }
 
