@@ -43,6 +43,8 @@ defaultLinuxInstallLocation := "/opts/"
 //name in Linux := "foonameinlinux" 
 
 
+// publish artifcat
+publishTo := Some(Resolver.file("file",  new File( "dist/release" )) )
 
 
 
