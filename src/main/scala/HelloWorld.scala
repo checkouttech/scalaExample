@@ -23,7 +23,7 @@
   * information.
  **/
 
-
+// TODO : just for testing a jenkins plugin
 object HelloWorld {
     def main(args: Array[String]) =
         println("Hello World!")
