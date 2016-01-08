@@ -11,5 +11,6 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.0.5")
 // *** Measure scala style
 addSbtPlugin("org.scalastyle" %% "scalastyle-sbt-plugin" % "0.8.0")
 
-
+// *** Push results to sonar
+addSbtPlugin("com.aol.sbt" % "sbt-sonarrunner-plugin" % "1.0.4")
 

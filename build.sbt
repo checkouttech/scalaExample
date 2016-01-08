@@ -49,4 +49,22 @@ defaultLinuxInstallLocation := "/opts/"
 // (testOptions in Test) += Tests.Argument(TestFrameworks.ScalaTest, "-u", "target/xml.report")
 // libraryDependencies += "org.pegdown" % "pegdown" % "1.5.0" % "test"
 
+//  Sonar details 
+enablePlugins(SonarRunnerPlugin)
+
+sonarProperties ++= Map(
+      "sonar.host.url" -> "http://192.168.150.21:9000",
+
+      "sonar.projectKey" ->  "icala_Example_Build",
+      "sonar.projectName" -> "icala :: Simple Project :: icala Example Build",
+      //"sonar.projectVersion" -> "5.1.0",
+
+      "sonar.sources" -> "src/main/scala",
+      "sonar.tests" ->  "src/test/scala", 
+      "sonar.scoverage.reportPath" -> "target/scala-2.11/scoverage-report/scoverage.xml"
+
+      //"sonar.language" ->  "scala",
+      //"sonar.core.codeCoveragePlugin" -> "scoverage",
+      //"sonar.scala.cobertura.reportPath" ->  "./target/scala-2.11/coverage-report/cobertura.xml"
+)
 
