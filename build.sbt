@@ -48,6 +48,18 @@ publishTo := Some(Resolver.file("file",  new File( "dist/release" )) )
 
 
 
+
+// Define a special test task which does not fail when any test fails,
+// so sequential tasks (like SonarQube analysis) will be performed no matter the test result.
+lazy val unitTests = taskKey[Unit]("Run unit tests")
+
+unitTests := {
+  // Capture the test result
+ val testResult = (test in Test).result.value
+}
+
+
+
 // TODO should be name-branch-major-minor.jar 
 // Git versioning 
 enablePlugins(GitVersioning)
