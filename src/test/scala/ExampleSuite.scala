@@ -9,7 +9,7 @@ class ExampleSuite extends FunSuite {
 
   // FIXME : this test is made to pass for continuing with the build process, need to implement sub-task method 
   test("test 2 values are different and fail") {
-    assert(3 === 3)
+    assert(2 === 3)
   }
 }
 
