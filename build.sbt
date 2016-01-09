@@ -48,6 +48,20 @@ publishTo := Some(Resolver.file("file",  new File( "dist/release" )) )
 
 
 
+// TODO should be name-branch-major-minor.jar 
+// Git versioning 
+enablePlugins(GitVersioning)
+
+
+val VersionRegex = "v([0-9]+.[0-9]+.[0-9]+)-?(.*)?".r
+git.gitTagToVersionNumber := {
+  case VersionRegex(v,"") => Some(v)
+  case VersionRegex(v,"SNAPSHOT") => Some(s"$v-SNAPSHOT")  
+  case VersionRegex(v,s) => Some(s"$v-$s-SNAPSHOT")
+  case _ => None
+}
+
+
 // (testOptions in Test) += Tests.Argument(TestFrameworks.ScalaTest, "-u", "target/xml.report")
 // libraryDependencies += "org.pegdown" % "pegdown" % "1.5.0" % "test"
 
